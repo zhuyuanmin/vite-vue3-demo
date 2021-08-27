@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 # vite-vue3-demo
-=======
-# vite-vue3-demo
->>>>>>> master
+
+>npm run dev \
+>npm run build \
+>npm serve
