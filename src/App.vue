@@ -20,7 +20,6 @@ provide("name", "沐华")
   <button @click="handlerClick">按钮</button>
   <HelloWorld msg="Hello Vue 3 + Vite" ref="domRef">
     <template #default="slotProps">
-
       <div>{{ slotProps.item.a }}</div>
     </template>
   </HelloWorld>

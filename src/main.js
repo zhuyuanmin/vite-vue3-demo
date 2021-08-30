@@ -2,8 +2,8 @@ import { createApp } from 'vue'
 import { createRouter, createWebHistory } from 'vue-router'
 import { createStore } from 'vuex'
 import axios from 'axios'
+import '@/web-components/index'
 import App from './App'
-import '@/web-components/my-button'
 import Home from '@/components/Home'
 import About from '@/components/About'
 
@@ -24,6 +24,11 @@ const store = createStore({
   mutations: {
     increment (state) {
       state.count++
+    }
+  },
+  actions: {
+    incrementAsync ({ commit }) {
+      commit('increment')
     }
   }
 })
