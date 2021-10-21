@@ -81,7 +81,7 @@
 
 <script setup>
 import { ref } from "vue";
-import url from "../pages/images/1.png";
+import url from "/public/images/1.png";
 const imgUrl = ref(url);
 const mouseoverEvent = (e) => {
   if (e.target.tagName === "LI") {

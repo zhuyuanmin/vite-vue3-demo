@@ -9,7 +9,6 @@ import 'virtual:svg-icons-register'
 import App from './App'
 import SvgIcon from './components/SvgIcon'
 
-
 const app = createApp(App)
 app.config.globalProperties.$http = axios
 

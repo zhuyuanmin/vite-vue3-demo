@@ -21,7 +21,7 @@
         :style="{ display: item.active ? 'block' : '' }"
       >
         <h1>{{ item.name }}</h1>
-        <div><img :src="'/src/pages' + item.content" alt="" srcset=""></div>
+        <div><img :src="item.content" alt="" srcset=""></div>
       </div>
     </div>
   </div>
@@ -34,12 +34,12 @@ const props = defineProps({
   data: {
     type: Object,
   },
-});
+})
 
-const emit = defineEmits(["activeEmit"]);
+const emit = defineEmits(["activeEmit"])
 const activeHandle = index => {
   emit("activeEmit", index);
-};
+}
 </script>
 
 <style lang="scss" scoped>
