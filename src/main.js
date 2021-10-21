@@ -1,40 +1,19 @@
 import { createApp } from 'vue'
-import { createRouter, createWebHistory } from 'vue-router'
-import { createStore } from 'vuex'
 import axios from 'axios'
+import router from '@/router'
+import store from '@/store'
 import '@/web-components/index'
+
+import 'virtual:svg-icons-register'
+
 import App from './App'
-import Home from '@/components/Home'
-import About from '@/components/About'
+import SvgIcon from './components/SvgIcon'
 
-const router = createRouter({
-  history: createWebHistory(),
-  routes: [
-    { path: '/home', component: Home },
-    { path: '/about', component: About }
-  ]
-})
-
-const store = createStore({
-  state () {
-    return {
-      count: 0
-    }
-  },
-  mutations: {
-    increment (state) {
-      state.count++
-    }
-  },
-  actions: {
-    incrementAsync ({ commit }) {
-      commit('increment')
-    }
-  }
-})
 
 const app = createApp(App)
 app.config.globalProperties.$http = axios
+
+app.component('svg-icon', SvgIcon)
 
 app.use(router)
   .use(store)
