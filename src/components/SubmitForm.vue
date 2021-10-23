@@ -34,7 +34,8 @@
 </template>
 <script setup>
 import { ref, watch } from "vue"
-import { ElForm, ElFormItem, ElInput, ElButton } from "element-plus"
+import axios from "axios"
+import { ElForm, ElFormItem, ElInput, ElButton, ElMessage } from "element-plus"
 const ruleRef = ref(null)
 const scale = ref(1)
 const ruleForm = ref({
@@ -78,8 +79,15 @@ watch(() => props.height, () => {
 const submitForm = () => {
   ruleRef.value.validate(valid => {
     if (valid) {
-      console.log(ruleForm.value);
-      alert('submit!')
+      axios.post('/cer/data/channel', ruleForm.value).then(res => {
+        ElMessage({
+          showClose: true,
+          message: '提交成功！',
+          type: 'success',
+        })
+      }).catch(err => {
+        throw new Error(err)
+      })
     } else {
       return false
     }

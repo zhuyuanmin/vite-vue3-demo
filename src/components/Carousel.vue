@@ -86,13 +86,13 @@ const computeImgHeight = () => {
 onMounted(() => {
   setTimeout(() => {
     computeImgHeight();
-  }, 100);
+  }, 500);
 });
 
 watch(() => store.state.activeKey, () => {
   setTimeout(() => {
     computeImgHeight();
-  }, 100);
+  }, 500);
 })
 
 window.addEventListener("resize", computeImgHeight);
